@@ -1,0 +1,32 @@
+data:
+  img_size: 384
+  dataset: dogs
+  batch_size: 16
+  #  color: 0.2
+#  blur: 0.1
+#  rotate: 15
+#  mixup: 0.4
+#  cutmix: 0.4
+#  no_crop: True
+parameters:
+  parts_ratio: 2
+  num_heads: 32
+  att_drop: 0.1
+  head_drop: 0.2
+  parts_drop: 0.4
+  fwp: True
+  pos: True
+  cross_layer: True
+  parts_base: 0.
+model:
+  type: swin
+  name: Swin Base
+  baseline_model: False
+  drop_path: 0.2
+  label_smooth: 0.1
+  pre_version: ' 1k'
+train:
+  lr: 8e-05
+#  clip_grad: None
+  warmup_epochs: 5
+  optimizer: Adamw

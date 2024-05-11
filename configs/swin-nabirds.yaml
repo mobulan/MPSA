@@ -1,0 +1,34 @@
+data:
+  img_size: 384
+  dataset: nabirds
+  batch_size: 16
+  blur: 0.1
+#  color: 0.4
+#  mixup: 0.4
+#  cutmix: 0.4
+  #  no_crop: True
+parameters:
+  parts_ratio: 2
+  num_heads: 32
+  att_drop: 0.1
+  head_drop: 0.2
+  parts_drop: 0.2
+  fwp: True
+  pos: True
+  cross_layer: True
+  parts_base: 0.
+model:
+  type: swin
+  name: Swin Base
+  baseline_model: False
+  drop_path: 0.2
+  label_smooth: 0.1
+train:
+  lr: 16e-03
+  clip_grad: 10.
+  warmup_epochs: 5
+#  optimizer: AdamW
+#  epochs: 50
+#misc:
+#  eval_mode: True
+#  throughput: True

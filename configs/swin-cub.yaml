@@ -1,0 +1,35 @@
+data:
+  img_size: 384
+  dataset: cub
+  batch_size: 16
+  blur: 0.1
+  #  color: 0.4
+  #  mixup: 0.8
+  #  cutmix: 1.0
+  #  no_crop: True
+parameters:
+  parts_ratio: 2
+  num_heads: 32
+  att_drop: 0.1
+  head_drop: 0.2
+  parts_drop: 0.4
+  fwp: True
+  pos: True
+  cross_layer: True
+  parts_base: 0.
+model:
+  type: swin
+  name: Swin Base
+  baseline_model: False
+  drop_path: 0.2
+  label_smooth: 0.1
+train:
+  lr: 8e-03
+  clip_grad: 10.
+  warmup_epochs: 5
+#  warmup_epochs: 1
+#  optimizer: AdamW
+#  epochs: 50
+#misc:
+#  eval_mode: True
+#  throughput: True
