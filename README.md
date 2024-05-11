@@ -13,8 +13,17 @@ You may specific your dataset path in the `/config/{settting}.yaml` under `data/
 1. Put the pre-trained model in `/pretrained/`, and rename it to `Swin Base.npz`.
 2. Change the log name and cuda visible by modifing line 13,14 in `/setup.py`.
 3. Running the following code according to you pytorch version:
+### Sigle GPU
+```
+python -m main.py
+```
+### Multiple GPUs
 #### If pytorch < 1.12.0
-```python -m torch.distributed.launch --nproc_per_node 2 main.py ```
+```
+python -m torch.distributed.launch --nproc_per_node 2 main.py
+```
 #### If pytorch >= 1.12.0
-```torchrun --nproc_per_node 2 main.py```
+```
+torchrun --nproc_per_node 2 main.py
+```
 You need to change the number behind the `-nproc_per_node` to your number of GPUs.
