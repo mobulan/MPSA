@@ -10,7 +10,7 @@ pip install yacs opencv-python opencv-contrib-python timm einops gpustat
 ### Datasets
 You may specific your dataset path in the `/config/{settting}.yaml` under `data/datasets`. Then please check if there is any conflict with the ip in line 103 of `settings/setup_functions.py`.
 ### Training
-1. Put the pre-trained model in `/pretrained/`, and rename it to `Swin Base.npz`.
+1. Put the pre-trained model in `/pretrained/`, and rename it to `Swin Base.pth`.
 2. Change the log name and cuda visible by modifing line 13,14 in `/setup.py`.
 3. Running the following code according to you pytorch version:
 ### Sigle GPU
