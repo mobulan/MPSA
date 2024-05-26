@@ -95,6 +95,7 @@ def LocateDatasets(config=None):
 		return ip
 
 	ip = HostIp()
+	print(ip)
 	address = ip.split('.')[3]
 	data_root = config.data.data_root
 	batch_size = config.data.batch_size
@@ -103,9 +104,8 @@ def LocateDatasets(config=None):
 		batch_size = config.data.batch_size // 2
 	elif ip == '172.17.71.118':
 		data_root = '/home/cvpr/dataset/'
-	elif address == '2' or address == '120' or address == '100':
-		data_root = 'C:\\Experiment\\Datasets'
-		batch_size = config.data.batch_size // 4
+	# Add Your IP and specific the path of dataset If you have multiple servers
+	
 	# print(data_root,batch_size)
 	return data_root, batch_size
 
