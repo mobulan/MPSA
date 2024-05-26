@@ -47,21 +47,6 @@ class Log:
 			with open(self.mname, 'w') as f:
 				print(*info, file=f, flush=True)
 
-
-def PTitle(log, rank=0):
-	if rank not in [-1, 0]: return
-	log.info('=' * 80)
-	log.info('MBVT : Multiscale Blend Vision Transformer for Fine-Grained Image Classification\n'
-	         '                            Pytorch Implementation')
-	log.info('=' * 80)
-	log.info('Author: Mobulan           Institute: Anhui University           Date: 2021-12-20')
-	log.info('-' * 80)
-	log.info(f'Python Version: {platform.python_version()}         '
-	         f'Pytorch Version: {torch.__version__}         Cuda Version: {torch.version.cuda}')
-	log.info('-' * 80, '\n')
-	pass
-
-
 class PMarkdownTable:
 	def __init__(self, log, titles, rank=0):
 		if rank not in [-1, 0]: return

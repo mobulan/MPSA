@@ -119,30 +119,5 @@ def build_loader(config):
 
 def normalized():
 	normalized_info = dict()
-	# normalized_info['pet'] = (0.4817828, 0.4497765, 0.3961324, 0.26035318, 0.25577134, 0.2635264)
-	# normalized_info['cub'] = (0.4865833, 0.5003001, 0.43229204, 0.22157472, 0.21690948, 0.24466534)
-	# normalized_info['nabirds'] = (0.49218804, 0.50868344, 0.46445918, 0.21430683, 0.21335651, 0.25660837)
-	# normalized_info['dogs'] = (0.4764075, 0.45210016, 0.3912831, 0.256719, 0.25130147, 0.25520605)
-	# normalized_info['cars'] = (0.47026777, 0.45981872, 0.4548266, 0.2880712, 0.28685528, 0.29420388)
-	# normalized_info['air'] = (0.47890663, 0.510387, 0.5342661, 0.21548453, 0.2100707, 0.24122715)
-	# normalized_info['flowers'] = (0.4358411, 0.37802523, 0.28822893, 0.29247612, 0.24125645, 0.2639247)
-	# normalized_info['food'] = (0.5458713, 0.44437927, 0.34431437, 0.26416683, 0.26873305, 0.27283677)
 	normalized_info['standard'] = (0.485, 0.456, 0.406, 0.229, 0.224, 0.225)
 	return normalized_info
-
-
-if __name__ == '__main__':
-	a = normalized()
-	print(a['food'])
-# 	config = ml_collections.ConfigDict()
-# 	config.data =    ml_collections.ConfigDict()
-# 	config.data.dataset = 'dogs'
-# 	config.data.data_root = '/data/datasets/fine-grained'
-# 	config.data.img_size = 448
-# 	config.data.blur = True
-# 	config.data.local_rank = -1
-# 	config.data.batch_size = 8
-# 	config.data.color = 0.1
-# 	config.local_rank = -1
-# 	a, b, c, d, e, f = build_loader(config)
-# 	print(c)

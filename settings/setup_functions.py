@@ -40,7 +40,6 @@ def SetupLogs(config, rank=0):
 		os.makedirs(config.data.log_path, exist_ok=True)
 	log = Log(fname=config.data.log_path, write=write)
 	# 输出
-	# PTitle(log,config.local_rank)
 	PSetting(log, 'Data Settings', config.data.keys(), config.data.values(), newline=2, rank=config.local_rank)
 	PSetting(log, 'Hyper Parameters', config.parameters.keys(), config.parameters.values(), rank=config.local_rank)
 	PSetting(log, 'Training Settings', config.train.keys(), config.train.values(), rank=config.local_rank)
@@ -62,17 +61,17 @@ def SetupDevice():
 		world_size = -1
 	nprocess = torch.cuda.device_count()
 	torch.cuda.set_device(rank)
-	# torch.use_deterministic_algorithms(True)
-	# torch.backends.cudnn.benchmark = True
+	torch.use_deterministic_algorithms(True)
+	torch.backends.cudnn.benchmark = True
 	return nprocess, rank
 
 
 def SetSeed(config):
 	seed = config.misc.seed + config.local_rank
-	# torch.manual_seed(seed)
-	# torch.cuda.manual_seed(seed)
-	# np.random.seed(seed)
-	# random.seed(seed)
+	torch.manual_seed(seed)
+	torch.cuda.manual_seed(seed)
+	np.random.seed(seed)
+	random.seed(seed)
 
 
 def ScaleLr(config):

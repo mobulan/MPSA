@@ -317,8 +317,7 @@ if __name__ == '__main__':
 	num_class = {'cub': 200, 'cars': 196, 'dogs': 120}
 	file_list = open_sample_folder(f'sample_img/{dataset}')
 	model = build_eval_model(config, num_class[dataset])
-	# label = torch.tensor([109, 144, 69, 42])
-	label = torch.tensor([69])
+	label = None
 	model.eval()
 	out = model_prediction(file_list, model, label)
 	print('outlogits done')

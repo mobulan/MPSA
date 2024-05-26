@@ -1,6 +1,6 @@
 from settings.defaults import _C
 from settings.setup_functions import *
-
+root = os.path.dirname(os.path.abspath(__file__))
 config = _C.clone()
 # cfg_file = os.path.join('configs','baseline', 'swin_tiny.yaml')
 # cfg_file = os.path.join('../configs', 'eval', 'eval.yaml')
