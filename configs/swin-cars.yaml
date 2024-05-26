@@ -32,5 +32,3 @@ train:
   warmup_epochs: 5
   clip_grad: None
   optimizer: AdamW
-misc:
-  amp: False
