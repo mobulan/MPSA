@@ -27,3 +27,20 @@ python -m torch.distributed.launch --nproc_per_node 2 main.py
 torchrun --nproc_per_node 2 main.py
 ```
 You need to change the number behind the `-nproc_per_node` to your number of GPUs.
+
+## Reference
+if this code is helpful to you, please cite as the following format
+```bibtex
+@ARTICLE{10638479,
+  author={Wang, Jiahui and Xu, Qin and Jiang, Bo and Luo, Bin and Tang, Jinhui},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Multi-Granularity Part Sampling Attention for Fine-Grained Visual Classification}, 
+  year={2024},
+  volume={33},
+  number={},
+  pages={4529-4542},
+  keywords={Feature extraction;Semantics;Visualization;Shape;Location awareness;Attention mechanisms;Transformers;Fine-grained visual classification;multi-granularity;part sampling;attention mechanism},
+  doi={10.1109/TIP.2024.3441813}
+}
+
+```
